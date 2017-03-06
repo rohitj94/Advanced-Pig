@@ -1,2 +1,0 @@
-grouped_distributor = GROUP petrol BY distributor;
-volumesold = foreach grouped_distributor generate group, SUM(petrol.volumeout);
