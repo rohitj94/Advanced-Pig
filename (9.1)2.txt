@@ -1,0 +1,5 @@
+grouped_district = GROUP petrol BY district;
+volumesold = foreach grouped_district generate group, SUM(petrol.volumeout) as volume;
+highest_sold = ORDER volumesold by volume desc;
+limit_highest_sold = limit highest_sold 10;
+dump limit_highest_sold;
